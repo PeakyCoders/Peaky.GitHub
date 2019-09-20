@@ -1,4 +1,5 @@
 ﻿using GitHub.Webhooks.Abstractions;
+using GitHub.Webhooks.Entities;
 using Newtonsoft.Json;
 
 namespace GitHub.Webhooks.Events
@@ -49,53 +50,5 @@ namespace GitHub.Webhooks.Events
         /// </summary>
         [JsonProperty("commits")]
         public Commit[] Commits;
-
-        public class Commit
-        {
-            /// <summary>
-            /// The SHA of the commit.
-            /// </summary>
-            [JsonProperty("sha")]
-            public string SHA;
-            
-            /// <summary>
-            /// The commit message.
-            /// </summary>
-            [JsonProperty("message")]
-            public string Message;
-
-            /// <summary>
-            /// The git author of the commit.
-            /// </summary>
-            [JsonProperty("author")]
-            public CommitAuthor Author;
-
-            /// <summary>
-            /// URL that points to the commit API resource.
-            /// </summary>
-            [JsonProperty("url")]
-            public string Url;
-
-            /// <summary>
-            /// Whether this commit is distinct from any that have been pushed before.
-            /// </summary>
-            [JsonProperty("distinct")]
-            public bool Distinct;
-
-            public class CommitAuthor
-            {
-                /// <summary>
-                /// The git author's name.
-                /// </summary>
-                [JsonProperty("name")]
-                public string Name;
-                
-                /// <summary>
-                /// The git author's email address.
-                /// </summary>
-                [JsonProperty("email")]
-                public string Email;
-            }
-        }
     }
 }

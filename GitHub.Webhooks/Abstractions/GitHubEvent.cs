@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GitHub.Webhooks.Entities;
+using Newtonsoft.Json;
 
 namespace GitHub.Webhooks.Abstractions
 {
@@ -8,13 +9,13 @@ namespace GitHub.Webhooks.Abstractions
         public abstract string EventType { get; }
 
         [JsonProperty("sender")]
-        public object Sender;
+        public User Sender;
 
         [JsonProperty("organization")]
         public object Organization;
 
         [JsonProperty("repository")]
-        public object Repository;
+        public Repository Repository;
 
         //public object Installation;
     }
