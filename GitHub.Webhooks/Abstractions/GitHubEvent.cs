@@ -5,8 +5,7 @@ namespace GitHub.Webhooks.Abstractions
 {
     public abstract class GitHubEvent
     {
-        [JsonIgnore]
-        public abstract string EventType { get; }
+        public abstract string GetEventName();
 
         [JsonProperty("sender")]
         public User Sender;

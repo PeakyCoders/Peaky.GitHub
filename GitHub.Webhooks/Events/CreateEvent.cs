@@ -8,8 +8,9 @@ namespace GitHub.Webhooks.Events
     /// </summary>
     public class CreateEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "create";
+        public const string EventName = "create";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The object that was created. Can be either branch or tag.

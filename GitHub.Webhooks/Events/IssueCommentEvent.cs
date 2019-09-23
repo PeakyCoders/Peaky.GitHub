@@ -9,8 +9,9 @@ namespace GitHub.Webhooks.Events
     /// </summary>
     public class IssueCommentEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "issue_comment";
+        public const string EventName = "issue_comment";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The action that was performed on the comment. Can be one of created, edited, or deleted.

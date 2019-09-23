@@ -8,8 +8,9 @@ namespace GitHub.Webhooks.Events
     /// </summary>
     public class DeleteEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "delete";
+        public const string EventName = "delete";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The object that was deleted. Can be branch or tag.

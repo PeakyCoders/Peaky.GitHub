@@ -11,8 +11,9 @@ namespace GitHub.Webhooks.Events
     /// </summary>
     public class PullRequestEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "pull_request";
+        public const string EventName = "pull_request";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The action that was performed. Can be one of assigned, unassigned, review_requested,
@@ -42,6 +43,6 @@ namespace GitHub.Webhooks.Events
         /// The pull request itself.
         /// </summary>
         [JsonProperty("pull_request")]
-        public object PullRequest;
+        public PullRequest PullRequest;
     }
 }

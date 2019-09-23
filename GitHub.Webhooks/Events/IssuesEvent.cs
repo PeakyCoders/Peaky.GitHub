@@ -11,8 +11,9 @@ namespace GitHub.Webhooks.Events
     /// </summary>
     public class IssuesEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "issues";
+        public const string EventName = "issues";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The action that was performed. Can be one of opened, edited, deleted,

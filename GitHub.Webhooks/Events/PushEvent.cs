@@ -12,8 +12,9 @@ namespace GitHub.Webhooks.Events
     /// </remarks>
     public class PushEvent : GitHubEvent
     {
-        [JsonIgnore]
-        public override string EventType => "push";
+        public const string EventName = "push";
+
+        public override string GetEventName() => EventName;
 
         /// <summary>
         /// The full git ref that was pushed.
