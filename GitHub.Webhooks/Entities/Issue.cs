@@ -29,9 +29,9 @@ namespace GitHub.Webhooks.Entities
         
         [JsonProperty("assignees")]
         public List<User> Assignees;
-
-        //[JsonProperty("milestone")]
-        //public Milestone Milestone;
+        
+        [JsonProperty("milestone")]
+        public Milestone Milestone;
 
         [JsonProperty("comments")]
         public int Comments;

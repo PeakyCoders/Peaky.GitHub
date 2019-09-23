@@ -12,11 +12,9 @@ namespace GitHub.Webhooks.Abstractions
         public User Sender;
 
         [JsonProperty("organization")]
-        public object Organization;
+        public Organization Organization;
 
         [JsonProperty("repository")]
         public Repository Repository;
-
-        //public object Installation;
     }
 }

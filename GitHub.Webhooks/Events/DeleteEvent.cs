@@ -21,6 +21,6 @@ namespace GitHub.Webhooks.Events
         /// The git ref.
         /// </summary>
         [JsonProperty("ref")]
-        public string Ref ;
+        public string Ref;
     }
 }

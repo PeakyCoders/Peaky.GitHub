@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using GitHub.Webhooks.Abstractions;
+﻿using GitHub.Webhooks.Abstractions;
 using GitHub.Webhooks.Entities;
 using Newtonsoft.Json;
 
@@ -27,27 +26,18 @@ namespace GitHub.Webhooks.Events
         /// The issue itself.
         /// </summary>
         [JsonProperty("issue")]
-        public object Issue;
+        public Issue Issue;
 
         /// <summary>
         /// The changes to the issue if the action was edited.
         /// </summary>
         [JsonProperty("changes")]
-        public object Changes;
-        
-        /// <summary>
-        /// The optional user who was assigned or unassigned from the issue.
-        /// </summary>
-        [JsonProperty("assignee")]
-        public User Assignee;
-        
-        [JsonProperty("assignees")]
-        public List<User> Assignees;
+        public Changes Changes;
         
         /// <summary>
         /// The optional label that was added or removed from the issue.
         /// </summary>
         [JsonProperty("label")]
-        public object Label;
+        public Label Label;
     }
 }
