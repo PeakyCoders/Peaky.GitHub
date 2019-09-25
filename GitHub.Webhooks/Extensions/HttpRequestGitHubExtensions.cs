@@ -15,11 +15,6 @@ namespace GitHub.Webhooks.Extensions
 {
     public static class HttpRequestGitHubExtensions
     {
-        public static bool IsValidSignature()
-        {
-            return false;
-        }
-
         public static string GetGitHubEventName(this HttpRequest request)
         {
             StringValues header = request.Headers[GitHubConstants.EventHeader];
@@ -69,7 +64,12 @@ namespace GitHub.Webhooks.Extensions
                 throw new GitHubWebhookException($"Null, empty or whitespace signature in {GitHubConstants.EventHeader} header");
             }
 
-            return eventName;
+            if (!eventName.StartsWith("sha1="))
+            {
+                throw new GitHubWebhookException("Unexpected signature type (expected SHA1)");
+            }
+
+            return eventName.Substring("sha1=".Length);
         }
         
         public static GitHubEvent GetGitHubEvent(this HttpRequest request, GitHubWebhookSettings settings = null)
@@ -82,27 +82,22 @@ namespace GitHub.Webhooks.Extensions
             {
                 request.EnableRewind();
             }
-            
+
+            // Only validate event signature if a secret has been defined
+            if (!string.IsNullOrWhiteSpace(settings.Secret))
+            {
+                request.Body.Seek(0, SeekOrigin.Begin);
+                bool isValid = GitHubCrypto.ValidateSignature(request.GetGitHubEventSignature(), request.Body, settings);
+                    
+                if (!isValid)
+                {
+                    throw new GitHubWebhookException("Invalid event signature");
+                }
+            }
+
+            request.Body.Seek(0, SeekOrigin.Begin);
             using (StreamReader reader = new StreamReader(request.Body, Encoding.UTF8, false, 1024, settings.LeaveBodyStreamOpen))
             {
-                // Only validate event signature if a secret has been defined
-                if (!string.IsNullOrWhiteSpace(settings.Secret))
-                {
-                    string signature = request.GetGitHubEventSignature();
-                    byte[] signatureBytes = Encoding.UTF8.GetBytes(signature);
-
-                    request.Body.Seek(0, SeekOrigin.Begin);
-                    byte[] computedBytes = settings.SHA.ComputeHash(request.Body);
-
-
-                    bool isValid = false;
-
-                    if (!isValid)
-                    {
-                        throw new GitHubWebhookException($"Invalid event signature ({signature})");
-                    }
-                }
-
                 Type eventType = request.GetGitHubEventType();
 
                 return (GitHubEvent) new JsonSerializer().Deserialize(reader, eventType);
