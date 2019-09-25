@@ -5,6 +5,13 @@ namespace GitHub.Webhooks.Static
 {
     internal static class GitHubCrypto
     {
+        /// <summary>
+        /// Validates a GitHub event signature (SHA1) and the body payload.
+        /// </summary>
+        /// <param name="signature">GitHub event signature (X-Hub-Signature).</param>
+        /// <param name="body">GitHub webhook event body stream.</param>
+        /// <param name="settings">GitHub webhook settings.</param>
+        /// <returns>Whether the signature is valid or not.</returns>
         public static bool ValidateSignature(string signature, Stream body, GitHubWebhookSettings settings)
         {
             byte[] signatureBytes = HexToBinary(signature);
@@ -13,6 +20,11 @@ namespace GitHub.Webhooks.Static
             return SafeEquals(signatureBytes, computedBytes);
         }
 
+        /// <summary>
+        /// Get the binary representation of a hexadecimal string.
+        /// </summary>
+        /// <param name="text">Hexadecimal string.</param>
+        /// <returns>Binary representation.</returns>
         private static byte[] HexToBinary(string text)
         {
             if (text.Length % 2 != 0)
@@ -33,6 +45,11 @@ namespace GitHub.Webhooks.Static
             return result;
         }
 
+        /// <summary>
+        /// Get the decimal value of a character in hexadecimal.
+        /// </summary>
+        /// <param name="c">Hexadecimal character.</param>
+        /// <returns>Decimal value.</returns>
         private static int GetHexValue(char c)
         {
             if (c >= '0' && c <= '9')
@@ -53,6 +70,12 @@ namespace GitHub.Webhooks.Static
             }
         }
 
+        /// <summary>
+        /// Compares two byte arrays in constant time, safe against timing attacks.
+        /// </summary>
+        /// <param name="x">First byte array.</param>
+        /// <param name="y">Second byte array.</param>
+        /// <returns>Whether both byte arrays are equal or not.</returns>
         private static bool SafeEquals(byte[] x, byte[] y)
         {
             if (x.Length != y.Length)

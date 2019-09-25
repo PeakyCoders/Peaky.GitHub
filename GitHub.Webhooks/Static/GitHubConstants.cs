@@ -14,10 +14,10 @@ namespace GitHub.Webhooks.Static
         {
             { CreateEvent.EventName, typeof(CreateEvent) },
             { DeleteEvent.EventName, typeof(DeleteEvent) },
-            { PushEvent.EventName, typeof(PushEvent) },
             { IssuesEvent.EventName, typeof(IssuesEvent) },
             { IssueCommentEvent.EventName, typeof(IssueCommentEvent) },
-            { PullRequestEvent.EventName, typeof(PullRequestEvent) }
+            { PullRequestEvent.EventName, typeof(PullRequestEvent) },
+            { PushEvent.EventName, typeof(PushEvent) },
         };
     }
 }
