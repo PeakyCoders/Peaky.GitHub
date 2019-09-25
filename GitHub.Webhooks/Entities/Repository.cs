@@ -209,8 +209,8 @@ namespace GitHub.Webhooks.Entities
         [JsonProperty("open_issues_count")]
         public int OpenIssuesCount;
         
-        //[JsonProperty("license")]
-        //public LicenseMetadata License;
+        [JsonProperty("license")]
+        public License License;
         
         [JsonProperty("default_branch")]
         public string DefaultBranch;
