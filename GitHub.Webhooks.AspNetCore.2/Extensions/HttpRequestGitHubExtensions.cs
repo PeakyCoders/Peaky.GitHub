@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 
-namespace GitHub.Webhooks.Extensions
+namespace GitHub.Webhooks.AspNetCore.Extensions
 {
     public static class HttpRequestGitHubExtensions
     {

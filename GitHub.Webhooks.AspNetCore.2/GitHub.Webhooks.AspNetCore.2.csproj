@@ -3,14 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>GitHub.Webhooks.AspNetCore.</RootNamespace>
+    <AssemblyName>GitHub.Webhooks.AspNetCore</AssemblyName>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GitHub.Webhooks.AspNetCore.2\GitHub.Webhooks.AspNetCore.2.csproj" />
     <ProjectReference Include="..\GitHub.Webhooks\GitHub.Webhooks.csproj" />
   </ItemGroup>
 

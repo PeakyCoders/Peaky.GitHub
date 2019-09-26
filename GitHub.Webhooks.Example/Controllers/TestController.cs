@@ -1,6 +1,6 @@
 ﻿using System;
 using GitHub.Webhooks.Abstractions;
-using GitHub.Webhooks.Extensions;
+using GitHub.Webhooks.AspNetCore.Extensions;
 using GitHub.Webhooks.Static;
 using Microsoft.AspNetCore.Mvc;
 
