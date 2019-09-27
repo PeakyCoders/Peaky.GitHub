@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Peaky Coders</Authors>
+    <Company>Peaky Coders</Company>
+    <Description>GitHub webhook events and entities.</Description>
+    <PackageProjectUrl>https://github.com/PeakyCoders/GitHub.Webhooks</PackageProjectUrl>
+    <PackageTags>GitHub Webhook</PackageTags>
+    <RepositoryUrl>https://github.com/PeakyCoders/GitHub.Webhooks</RepositoryUrl>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
