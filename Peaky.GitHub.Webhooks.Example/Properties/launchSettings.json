@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GitHub.Webhooks.Example": {
+    "Peaky.GitHub.Webhooks.Example": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/test",

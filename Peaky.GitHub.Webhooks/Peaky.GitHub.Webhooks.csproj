@@ -6,9 +6,9 @@
     <Authors>Peaky Coders</Authors>
     <Company>Peaky Coders</Company>
     <Description>GitHub webhook events and entities.</Description>
-    <PackageProjectUrl>https://github.com/PeakyCoders/GitHub.Webhooks</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PeakyCoders/Peaky.GitHub</PackageProjectUrl>
     <PackageTags>GitHub Webhook</PackageTags>
-    <RepositoryUrl>https://github.com/PeakyCoders/GitHub.Webhooks</RepositoryUrl>
+    <RepositoryUrl>https://github.com/PeakyCoders/Peaky.GitHub</RepositoryUrl>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
 

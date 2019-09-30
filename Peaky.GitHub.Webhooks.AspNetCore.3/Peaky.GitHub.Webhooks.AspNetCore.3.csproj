@@ -11,8 +11,8 @@
     <Authors>Peaky Coders</Authors>
     <Description>AspNetCore context and request extensions for GitHub webhook events.</Description>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/PeakyCoders/GitHub.Webhooks</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/PeakyCoders/GitHub.Webhooks</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PeakyCoders/Peaky.GitHub</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/PeakyCoders/Peaky.GitHub</PackageProjectUrl>
     <PackageTags>GitHub Webhook AspNetCore</PackageTags>
   </PropertyGroup>
 
