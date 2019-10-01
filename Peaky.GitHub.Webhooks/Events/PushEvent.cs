@@ -23,33 +23,42 @@ namespace Peaky.GitHub.Webhooks.Events
         public string Ref;
 
         /// <summary>
-        /// The SHA of the most recent commit on ref after the push.
-        /// </summary>
-        [JsonProperty("head")]
-        public string Head;
-
-        /// <summary>
         /// The SHA of the most recent commit on ref before the push.
         /// </summary>
         [JsonProperty("before")]
         public string Before;
         
         /// <summary>
-        /// The number of commits in the push.
+        /// The SHA of the most recent commit on ref before the push.
         /// </summary>
-        [JsonProperty("size")]
-        public int Size;
+        [JsonProperty("after")]
+        public string After;
         
-        /// <summary>
-        /// The number of distinct commits in the push.
-        /// </summary>
-        [JsonProperty("distinct_size")]
-        public int DistinctSize;
+        [JsonProperty("pusher")]
+        public object Pusher;
+        
+        [JsonProperty("after")]
+        public bool Created;
+        
+        [JsonProperty("deleted")]
+        public bool Deleted;
+        
+        [JsonProperty("forced")]
+        public bool Forced;
+        
+        [JsonProperty("base_ref")]
+        public string BaseRef;
+        
+        [JsonProperty("compare")]
+        public string Compare;
 
         /// <summary>
         /// An array of commit objects describing the pushed commits.
         /// </summary>
         [JsonProperty("commits")]
         public Commit[] Commits;
+        
+        [JsonProperty("head_commit")]
+        public Commit HeadCommit;
     }
 }
