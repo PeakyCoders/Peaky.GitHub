@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+#if NETCOREAPP2_2
+using Microsoft.AspNetCore.Http.Internal;
+#endif
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using Peaky.GitHub.Webhooks.Abstractions;
@@ -19,7 +22,11 @@ namespace Peaky.GitHub.Webhooks.AspNetCore.Extensions
         {
             settings = settings ?? GitHubWebhookSettings.Default;
 
+            #if NETCOREAPP2_2
+            request.EnableRewind();
+            #elif NETCOREAPP3_0
             request.EnableBuffering();
+            #endif
 
             // Only validate event signature if a secret has been defined
             if (settings.ShouldValidate)

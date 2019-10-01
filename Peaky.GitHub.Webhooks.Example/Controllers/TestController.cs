@@ -6,7 +6,7 @@ using Peaky.GitHub.Webhooks.Static;
 
 namespace Peaky.GitHub.Webhooks.Example.Controllers
 {
-    [Route("api/test")]
+    [Route("github")]
     [ApiController]
     public class TestController : ControllerBase
     {
