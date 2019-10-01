@@ -20,8 +20,6 @@ namespace Peaky.GitHub.Webhooks.AspNetCore.Extensions
         {
             settings = settings ?? GitHubWebhookSettings.Default;
 
-            // If signature validation is enabled, we'll need to read the body stream twice,
-            // first to compute the SHA1 and then to deserialize into an GitHubEvent
             request.EnableRewind();
 
             // Only validate event signature if a secret has been defined
