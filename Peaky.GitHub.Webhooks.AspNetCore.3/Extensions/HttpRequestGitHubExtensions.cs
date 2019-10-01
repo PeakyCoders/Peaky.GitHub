@@ -21,13 +21,10 @@ namespace Peaky.GitHub.Webhooks.AspNetCore.Extensions
 
             // If signature validation is enabled, we'll need to read the body stream twice,
             // first to compute the SHA1 and then to deserialize into an GitHubEvent
-            if (settings.ShouldValidate && !request.Body.CanSeek)
-            {
-                request.EnableBuffering();
-            }
+            request.EnableBuffering();
 
             // Only validate event signature if a secret has been defined
-            if (!string.IsNullOrWhiteSpace(settings.Secret))
+            if (settings.ShouldValidate)
             {
                 string signature = GetGitHubEventSignature(request);
 
