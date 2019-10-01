@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.2;netcoreapp3.0</TargetFrameworks>
     <RootNamespace>Peaky.GitHub.Webhooks.AspNetCore</RootNamespace>
     <AssemblyName>Peaky.GitHub.Webhooks.AspNetCore</AssemblyName>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Version>0.4.0.0</Version>
+    <Version>0.5.0.0</Version>
     <Authors>Peaky Coders</Authors>
     <Description>AspNetCore context and request extensions for GitHub webhook events.</Description>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
