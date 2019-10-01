@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Peaky.GitHub.Webhooks.Converters;
 
 namespace Peaky.GitHub.Webhooks.Entities
 {
@@ -24,10 +25,12 @@ namespace Peaky.GitHub.Webhooks.Entities
         public string IssueUrl;
 
         [JsonProperty("created_at")]
-        public DateTime CreatedAt;
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
+        public DateTime? CreatedAt;
         
         [JsonProperty("updated_at")]
-        public DateTime UpdatedAt;
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
+        public DateTime? UpdatedAt;
 
         [JsonProperty("author_association")]
         public string AuthorAssociation;
