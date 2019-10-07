@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0</Version>
+    <Authors>Peaky Coders</Authors>
+    <Company>Peaky Coders</Company>
+    <Description>GitHub webhook events and entities.</Description>
+    <PackageProjectUrl>https://github.com/PeakyCoders/Peaky.GitHub</PackageProjectUrl>
+    <PackageTags>GitHub Webhook</PackageTags>
+    <RepositoryUrl>https://github.com/PeakyCoders/Peaky.GitHub</RepositoryUrl>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+</Project>
