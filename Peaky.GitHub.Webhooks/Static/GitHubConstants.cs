@@ -18,7 +18,15 @@ namespace Peaky.GitHub.Webhooks.Static
             { IssueCommentEvent.EventName, typeof(IssueCommentEvent) },
             { PullRequestEvent.EventName, typeof(PullRequestEvent) },
             { PushEvent.EventName, typeof(PushEvent) },
-            { StatusEvent.EventName, typeof(StatusEvent) }
+            { StatusEvent.EventName, typeof(StatusEvent) },
+            { PullRequestReviewEvent.EventName, typeof(PullRequestReviewEvent) },
+            { PullRequestReviewCommentEvent.EventName, typeof(PullRequestReviewCommentEvent) },
+            { StarEvent.EventName, typeof(StarEvent) },
+            { WatchEvent.EventName, typeof(WatchEvent) },
+            { ForkEvent.EventName, typeof(ForkEvent) },
+            { GollumEvent.EventName, typeof(GollumEvent) },
+            { LabelEvent.EventName, typeof(LabelEvent) },
+            { MilestoneEvent.EventName, typeof(MilestoneEvent) }
         };
     }
 }
