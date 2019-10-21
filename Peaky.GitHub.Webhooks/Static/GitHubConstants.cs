@@ -20,6 +20,7 @@ namespace Peaky.GitHub.Webhooks.Static
             { PushEvent.EventName, typeof(PushEvent) },
             { StatusEvent.EventName, typeof(StatusEvent) },
             { PullRequestReviewEvent.EventName, typeof(PullRequestReviewEvent) },
+            { PullRequestReviewCommentEvent.EventName, typeof(PullRequestReviewCommentEvent) }
         };
     }
 }
