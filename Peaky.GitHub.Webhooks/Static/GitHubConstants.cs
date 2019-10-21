@@ -24,7 +24,8 @@ namespace Peaky.GitHub.Webhooks.Static
             { StarEvent.EventName, typeof(StarEvent) },
             { WatchEvent.EventName, typeof(WatchEvent) },
             { ForkEvent.EventName, typeof(ForkEvent) },
-            { GollumEvent.EventName, typeof(GollumEvent) }
+            { GollumEvent.EventName, typeof(GollumEvent) },
+            { LabelEvent.EventName, typeof(LabelEvent) }
         };
     }
 }
