@@ -23,7 +23,8 @@ namespace Peaky.GitHub.Webhooks.Static
             { PullRequestReviewCommentEvent.EventName, typeof(PullRequestReviewCommentEvent) },
             { StarEvent.EventName, typeof(StarEvent) },
             { WatchEvent.EventName, typeof(WatchEvent) },
-            { ForkEvent.EventName, typeof(ForkEvent) }
+            { ForkEvent.EventName, typeof(ForkEvent) },
+            { GollumEvent.EventName, typeof(GollumEvent) }
         };
     }
 }
