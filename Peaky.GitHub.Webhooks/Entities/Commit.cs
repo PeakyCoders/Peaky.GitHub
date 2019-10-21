@@ -1,37 +1,44 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Peaky.GitHub.Webhooks.Converters;
 
 namespace Peaky.GitHub.Webhooks.Entities
 {
     public class Commit
     {
-        /// <summary>
-        /// The SHA of the commit.
-        /// </summary>
-        [JsonProperty("sha")]
-        public string SHA;
-            
-        /// <summary>
-        /// The commit message.
-        /// </summary>
+        [JsonProperty("id")]
+        public string Id;
+        
+        [JsonProperty("tree_id")]
+        public string TreeId;
+        
         [JsonProperty("message")]
         public string Message;
+        
+        [JsonProperty("timestamp")]
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
+        public DateTime? Timestamp;
 
-        /// <summary>
-        /// The git author of the commit.
-        /// </summary>
         [JsonProperty("author")]
         public Author Author;
+        
+        [JsonProperty("committer")]
+        public Author Committer;
 
-        /// <summary>
-        /// URL that points to the commit API resource.
-        /// </summary>
         [JsonProperty("url")]
         public string Url;
 
-        /// <summary>
-        /// Whether this commit is distinct from any that have been pushed before.
-        /// </summary>
         [JsonProperty("distinct")]
         public bool Distinct;
+        
+        [JsonProperty("added")]
+        public List<string> Added;
+        
+        [JsonProperty("removed")]
+        public List<string> Removed;
+        
+        [JsonProperty("modified")]
+        public List<string> Modified;
     }
 }

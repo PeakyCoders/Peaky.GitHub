@@ -27,6 +27,7 @@ namespace Peaky.GitHub.Webhooks.Example
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {

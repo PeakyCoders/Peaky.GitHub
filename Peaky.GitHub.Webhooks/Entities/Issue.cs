@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Peaky.GitHub.Webhooks.Converters;
 
 namespace Peaky.GitHub.Webhooks.Entities
 {
@@ -37,12 +38,15 @@ namespace Peaky.GitHub.Webhooks.Entities
         public int Comments;
         
         [JsonProperty("created_at")]
-        public DateTime CreatedAt;
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
+        public DateTime? CreatedAt;
         
         [JsonProperty("updated_at")]
-        public DateTime UpdatedAt;
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
+        public DateTime? UpdatedAt;
 
         [JsonProperty("closed_at")]
+        [JsonConverter(typeof(GitHubDateTimeConverter))]
         public DateTime? ClosedAt;
 
         [JsonProperty("author_association")]
