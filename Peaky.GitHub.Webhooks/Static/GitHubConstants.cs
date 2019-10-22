@@ -30,7 +30,8 @@ namespace Peaky.GitHub.Webhooks.Static
             { CommitCommentEvent.EventName, typeof(CommitCommentEvent) },
             { MemberEvent.EventName, typeof(MemberEvent) },
             { PublicEvent.EventName, typeof(PublicEvent) },
-            { ReleaseEvent.EventName, typeof(ReleaseEvent) }
+            { ReleaseEvent.EventName, typeof(ReleaseEvent) },
+            { ContentReferenceEvent.EventName, typeof(ContentReferenceEvent) }
         };
     }
 }
