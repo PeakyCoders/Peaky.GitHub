@@ -29,6 +29,6 @@ namespace Peaky.GitHub.Webhooks.Events
         /// The comment itself.
         /// </summary>
         [JsonProperty("comment")]
-        public Comment Comment;
+        public IssueComment Comment;
     }
 }

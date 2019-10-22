@@ -4,7 +4,7 @@ using Peaky.GitHub.Webhooks.Converters;
 
 namespace Peaky.GitHub.Webhooks.Entities
 {
-    public class Comment
+    public class CommitComment
     {
         [JsonProperty("id")]
         public long Id;
@@ -21,8 +21,14 @@ namespace Peaky.GitHub.Webhooks.Entities
         [JsonProperty("html_url")]
         public string HtmlUrl;
         
-        [JsonProperty("issue_url")]
-        public string IssueUrl;
+        [JsonProperty("position")]
+        public int Position;
+        
+        [JsonProperty("line")]
+        public int Line;
+        
+        [JsonProperty("path")]
+        public string Path;
 
         [JsonProperty("created_at")]
         [JsonConverter(typeof(GitHubDateTimeConverter))]
