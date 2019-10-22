@@ -27,7 +27,8 @@ namespace Peaky.GitHub.Webhooks.Static
             { GollumEvent.EventName, typeof(GollumEvent) },
             { LabelEvent.EventName, typeof(LabelEvent) },
             { MilestoneEvent.EventName, typeof(MilestoneEvent) },
-            { CommitCommentEvent.EventName, typeof(CommitCommentEvent) }
+            { CommitCommentEvent.EventName, typeof(CommitCommentEvent) },
+            { MemberEvent.EventName, typeof(MemberEvent) }
         };
     }
 }
