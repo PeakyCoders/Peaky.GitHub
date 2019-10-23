@@ -37,7 +37,7 @@ namespace Peaky.GitHub.Webhooks.Events
         [JsonProperty("pusher")]
         public object Pusher;
         
-        [JsonProperty("after")]
+        [JsonProperty("created")]
         public bool Created;
         
         [JsonProperty("deleted")]
